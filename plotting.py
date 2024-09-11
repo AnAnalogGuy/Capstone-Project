@@ -22,8 +22,8 @@ def bollinger_bands(stock, std=2):
     plt.plot(stock.index, stock.Lower_band, color='#ffa33f', alpha=0.3)
     plt.fill_between(stock.index, stock.Upper_band, stock.Lower_band, color='#ffa33f', alpha=0.1, label='Bollinger Band ({} STD)'.format(std))
     plt.legend(frameon=True, loc=1, ncol=1, fontsize=10, borderpad=.6)
-    plt.title('Bollinger Bands', fontSize=15)
-    plt.ylabel('Price', fontSize=12)
+    plt.title('Bollinger Bands', fontsize=15)
+    plt.ylabel('Price', fontsize=12)
     plt.xlim([stock.index.min(), stock.index.max()])
     plt.show()
 
@@ -31,8 +31,8 @@ def volume(stock):
     # Volume plot
     plt.figure(figsize=(16,2))
     plt.style.use('seaborn-whitegrid')
-    plt.title('Volume', fontSize=15)
-    plt.ylabel('Volume', fontSize=12)
+    plt.title('Volume', fontsize=15)
+    plt.ylabel('Volume', fontsize=12)
     plt.plot(stock.index, stock['Volume'].ewm(21).mean())
     plt.xlim([stock.index.min(), stock.index.max()])
     plt.show()    
